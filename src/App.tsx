@@ -6,11 +6,11 @@ type SectionId = 'about' | 'experience' | 'projects' | 'education' | 'highlights
 const App = () => {
   const [activeSection, setActiveSection] = useState<SectionId>('about')
 
-  const aboutRef = useRef<HTMLElement | null>(null)
-  const experienceRef = useRef<HTMLElement | null>(null)
-  const projectsRef = useRef<HTMLElement | null>(null)
-  const educationRef = useRef<HTMLElement | null>(null)
-  const highlightsRef = useRef<HTMLElement | null>(null)
+  const aboutRef = useRef<HTMLElement>(null!)
+  const experienceRef = useRef<HTMLElement>(null!)
+  const projectsRef = useRef<HTMLElement>(null!)
+  const educationRef = useRef<HTMLElement>(null!)
+  const highlightsRef = useRef<HTMLElement>(null!)
 
   const handleScrollTo = (section: SectionId) => {
     const map: Record<SectionId, React.RefObject<HTMLElement>> = {
