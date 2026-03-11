@@ -85,7 +85,7 @@ jobs:
           application_name: anchit-cv
           environment_name: anchit-cv-env
           existing_bucket_name: elasticbeanstalk-ap-southeast-2-844347863993
-          region: ap-south-1
+          region: ap-southeast-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
 
