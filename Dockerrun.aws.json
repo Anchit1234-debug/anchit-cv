@@ -1,17 +1,13 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "containerDefinitions": [
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "anchit123/anchit-cv:latest",
+    "Update": "true"
+  },
+  "Ports": [
     {
-      "name": "anchit-cv",
-      "image": "anchit123/anchit-cv:latest",
-      "essential": true,
-      "memory": 256,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 80
-        }
-      ]
+      "ContainerPort": "80",
+      "HostPort": "80"
     }
   ]
 }
