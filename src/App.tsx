@@ -73,6 +73,13 @@ const App = () => {
           <span className="site-title-main">Anchit Bhushan</span>
           <span className="site-title-sub">Backend & Platform Engineer</span>
         </button>
+        <a
+          href="/Anchit_long_resume.pdf"
+          download="Anchit_Bhushan_Resume.pdf"
+          className="nav-pill download-btn"
+        >
+          ↓ PDF
+        </a>
         <nav className="site-nav">
           <button
             type="button"
