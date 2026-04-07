@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run parse-tex && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "parse-tex": "node scripts/parse-tex.js",
+    "compile-pdf": "docker run --rm -v \"$(pwd)\":/app -w /app texlive/texlive pdflatex -interaction=nonstopmode anchit-resume.tex && cp anchit-resume.pdf public/anchit-resume.pdf && rm -f anchit-resume.aux anchit-resume.log anchit-resume.out anchit-resume.pdf"
   },
   "dependencies": {
     "react": "^19.2.0",
