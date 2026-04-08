@@ -80,6 +80,7 @@ function cleanTex(s) {
   while (prev !== result) {
     prev = result
     result = result
+      .replace(/\\&/g, '&')
       .replace(/\\textbf\{([^{}]*)\}/g, '$1')
       .replace(/\\textit\{([^{}]*)\}/g, '$1')
       .replace(/\\emph\{([^{}]*)\}/g, '$1')
@@ -145,7 +146,7 @@ function parseSections() {
   const headings = []
   let m
   while ((m = headingRe.exec(body)) !== null) {
-    headings.push({ title: m[1], matchStart: m.index, matchEnd: m.index + m[0].length })
+    headings.push({ title: cleanTex(m[1]), matchStart: m.index, matchEnd: m.index + m[0].length })
   }
 
   const sections = []
@@ -170,7 +171,10 @@ function parseSection(title, content) {
   if (descEnv) {
     const items = parseDescriptionItems(descEnv.inner)
     const hasUrls = items.some(item => 'url' in item)
-    return { id, title, type: hasUrls ? 'links' : 'skills', items }
+    const hasYearLabels = items.every(item => 'label' in item && /^\d{4}$/.test(item.label))
+    if (hasUrls) return { id, title, type: 'links', items }
+    if (hasYearLabels) return { id, title, type: 'achievements', items }
+    return { id, title, type: 'skills', items }
   }
 
   return null
@@ -314,7 +318,14 @@ export interface LinksSection {
   items: LinkItem[]
 }
 
-export type CvSection = JobsSection | SkillsSection | LinksSection
+export interface AchievementsSection {
+  id: string
+  title: string
+  type: 'achievements'
+  items: SkillItem[]
+}
+
+export type CvSection = JobsSection | SkillsSection | LinksSection | AchievementsSection
 
 export interface CvData {
   name: string

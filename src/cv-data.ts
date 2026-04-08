@@ -48,7 +48,14 @@ export interface LinksSection {
   items: LinkItem[]
 }
 
-export type CvSection = JobsSection | SkillsSection | LinksSection
+export interface AchievementsSection {
+  id: string
+  title: string
+  type: 'achievements'
+  items: SkillItem[]
+}
+
+export type CvSection = JobsSection | SkillsSection | LinksSection | AchievementsSection
 
 export interface CvData {
   name: string
@@ -136,6 +143,21 @@ export const cvData: CvData = {
         {
           "label": "AI / Developer Tools",
           "value": "GitHub Copilot, Claude Code"
+        }
+      ]
+    },
+    {
+      "id": "honor-achievements",
+      "title": "Honor & Achievements",
+      "type": "achievements",
+      "items": [
+        {
+          "label": "2025",
+          "value": "At Infosys Ltd. Bangalore, Received certificate for exceptional dedication, outstanding contributions and exemplary performance."
+        },
+        {
+          "label": "2022",
+          "value": "At FIS Solutions (India) Pvt. Ltd. Bangalore, Received Kudos award for sole contribution towards IV Gen3 Server migration."
         }
       ]
     }
