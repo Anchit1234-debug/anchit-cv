@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { cvData } from './cv-data'
 import type { CvSection, JobsSection, SkillsSection, LinksSection, AchievementsSection } from './cv-data'
 
-const mainSectionTypes = ['jobs', 'achievements'] as const
+const mainSectionTypes: readonly string[] = ['jobs', 'achievements']
 
 const App = () => {
   const [activeSection, setActiveSection] = useState<string>('about')
