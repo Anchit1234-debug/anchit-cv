@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { cvData } from './cv-data'
-import type { CvSection, JobsSection, SkillsSection, LinksSection } from './cv-data'
+import type { CvSection, JobsSection, SkillsSection, LinksSection, AchievementsSection } from './cv-data'
 
-const mainSectionTypes = ['jobs']
+const mainSectionTypes = ['jobs', 'achievements'] as const
 
 const App = () => {
   const [activeSection, setActiveSection] = useState<string>('about')
@@ -115,30 +116,33 @@ const App = () => {
                     </a>
                   </div>
                 )}
-                {cvData.contact.linkedinUrl && (
+                {(cvData.contact.linkedinUrl || cvData.contact.githubUrl) && (
                   <div className="cv-meta-group">
-                    <span className="cv-meta-label">LinkedIn</span>
-                    <a
-                      href={cvData.contact.linkedinUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="cv-meta-value"
-                    >
-                      {cvData.contact.linkedinUrl.replace(/https?:\/\/(www\.)?linkedin\.com\/in\//, '')}
-                    </a>
-                  </div>
-                )}
-                {cvData.contact.githubUrl && (
-                  <div className="cv-meta-group">
-                    <span className="cv-meta-label">GitHub</span>
-                    <a
-                      href={cvData.contact.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="cv-meta-value"
-                    >
-                      {cvData.contact.githubUrl.replace(/https?:\/\/(www\.)?github\.com\//, '')}
-                    </a>
+                    <span className="cv-meta-label">Links</span>
+                    <div className="cv-social-icons">
+                      {cvData.contact.linkedinUrl && (
+                        <a
+                          href={cvData.contact.linkedinUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="cv-social-link"
+                          title="LinkedIn"
+                        >
+                          <FaLinkedin />
+                        </a>
+                      )}
+                      {cvData.contact.githubUrl && (
+                        <a
+                          href={cvData.contact.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="cv-social-link"
+                          title="GitHub"
+                        >
+                          <FaGithub />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
@@ -182,6 +186,7 @@ const SectionBlock = ({ section, setRef }: SectionBlockProps) => (
     {section.type === 'jobs' && <JobsSectionContent section={section} />}
     {section.type === 'skills' && <SkillsSectionContent section={section} />}
     {section.type === 'links' && <LinksSectionContent section={section} />}
+    {section.type === 'achievements' && <AchievementsSectionContent section={section} />}
   </section>
 )
 
@@ -219,6 +224,19 @@ const SkillsSectionContent = ({ section }: { section: SkillsSection }) => (
       </div>
     ))}
   </dl>
+)
+
+const AchievementsSectionContent = ({ section }: { section: AchievementsSection }) => (
+  <div className="cv-item cv-item-hover">
+    <ul className="cv-achievement-list">
+      {section.items.map((item, i) => (
+        <li key={i} className="cv-achievement-item">
+          <span className="cv-achievement-year">{item.label}</span>
+          <span className="cv-achievement-text">{item.value}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 )
 
 const LinksSectionContent = ({ section }: { section: LinksSection }) => (

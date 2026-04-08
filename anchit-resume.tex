@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 %-----------------------------------------------------------
 \usepackage[empty]{fullpage}
@@ -6,6 +6,7 @@
 \usepackage[misc]{ifsym}
 \usepackage{hyperref}
 \usepackage{fontawesome}
+\usepackage{enumitem}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -18,21 +19,21 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Adjust margins to 0.5in on all sides
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}
-\addtolength{\textheight}{1.0in}
+% Margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
 
 %-----------------------------------------------------------
 %Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resitem}[1]{\item #1 \vspace{-1pt}}
 \newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} \\
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
 \end{tabular*}\vspace{-6pt}}
 %-----------------------------------------------------------
 
@@ -46,7 +47,7 @@
                                     & \faGithub\ \textit{\href{https://github.com/Anchit1234-debug}{GitHub}}
 \end{tabular*}
 
-\vspace{4pt}
+\vspace{2pt}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,44 +55,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Work Experience}
 
-\begin{itemize}
+\begin{itemize}[leftmargin=0pt, itemsep=2pt, parsep=0pt]
 \item[]
-	\ressubheading{Infosys Limited}{Bengaluru, India}{Senior Associate Consultant (Helix)}{August 2024 -- Present}
-	\begin{itemize}
+    \ressubheading{Infosys Limited}{Bengaluru, India}{Senior Associate Consultant (Helix)}{August 2024 -- Present}
+    \begin{itemize}[itemsep=2pt, parsep=0pt]
         \resitem{Developed and maintained scalable \textbf{RESTful} APIs using \textbf{Java} and \textbf{Spring Boot}, enabling seamless integration with external systems and cross-domain microservices architectures.}
         \resitem{Engineered high-throughput \textbf{SFTP}-to-\textbf{Azure} data pipelines using Spring Scheduler, processing \textbf{\textasciitilde10K} \textbf{EDI 834} files daily with robust error handling and reliability.}
         \resitem{Orchestrated containerized deployments using \textbf{Docker} and \textbf{Kubernetes}, implementing \textbf{Helm}-based release management and leveraging ConfigMaps and Secrets for secure multi-environment deployments.}
         \resitem{Conducted comprehensive \textbf{code reviews} and mentored 3 team members, enforcing Clean Code principles and improving code quality and maintainability.}
-	\end{itemize}
-	\vspace{3pt}
+    \end{itemize}
+    \vspace{2pt}
 
 \item[]
-	\ressubheading{FIS Solutions (India) Private Limited}{Bengaluru, India}{Software Engineer (Global Plus -- Wealth Management)}{July 2021 -- Jan 2024}
-	\begin{itemize}
-	    \resitem{Enhanced inbound and outbound message processing for \href{https://www.swift.com/}{SWIFT} Standards Update 2023, ensuring compliance and improved processing reliability.}
-	    \resitem{Delivered multiple enhancements and bug fixes in \textbf{C} and \textbf{FORTRAN} within a \textbf{UNIX} environment for a Wealth Management platform serving multiple banking clients.}
-	    \resitem{Designed and implemented a dual push mechanism to export files between \textbf{Windows Server}-hosted \textbf{.NET} applications via \textbf{XML}, improving cross-server data transfer reliability.}
-	\end{itemize}
-	\vspace{3pt}
+    \ressubheading{FIS Solutions (India) Private Limited}{Bengaluru, India}{Software Engineer (Global Plus -- Wealth Management)}{July 2021 -- Jan 2024}
+    \begin{itemize}[itemsep=2pt, parsep=0pt]
+        \resitem{Enhanced inbound and outbound message processing for \href{https://www.swift.com/}{SWIFT} Standards Update 2023, ensuring compliance and improved processing reliability.}
+        \resitem{Delivered multiple enhancements and bug fixes in \textbf{C} and \textbf{FORTRAN} within a \textbf{UNIX} environment for a Wealth Management platform serving multiple banking clients.}
+        \resitem{Designed and implemented a dual push mechanism to export files between \textbf{Windows Server}-hosted \textbf{.NET} applications via \textbf{XML}, improving cross-server data transfer reliability.}
+    \end{itemize}
+    \vspace{2pt}
 
 \item[]
-	\ressubheading{Accenture Solutions Pvt Ltd}{Bengaluru, India}{Application Development Associate (OSISoft PI)}{November 2020 -- April 2021}
-	\begin{itemize}
-	    \resitem{Completed training in \textbf{C}, \textbf{Java}, \textbf{Python}, \textbf{SDLC}, \textbf{Agile}, and \textbf{DevOps}, building a strong foundation across full-stack development and modern engineering practices.}
-	    \resitem{Provided application support for real-time manufacturing data collection using OSIsoft PI \textbf{Data Historian} for a \textbf{Pharmaceutical} client, ensuring data integrity and system continuity.}
-	\end{itemize}
-	\vspace{3pt}
+    \ressubheading{Accenture Solutions Pvt Ltd}{Bengaluru, India}{Application Development Associate (OSISoft PI)}{November 2020 -- April 2021}
+    \begin{itemize}[itemsep=2pt, parsep=0pt]
+        \resitem{Completed training in \textbf{C}, \textbf{Java}, \textbf{Python}, \textbf{SDLC}, \textbf{Agile}, and \textbf{DevOps}, building a strong foundation across full-stack development and modern engineering practices.}
+        \resitem{Provided application support for real-time manufacturing data collection using OSIsoft PI \textbf{Data Historian} for a \textbf{Pharmaceutical} client, ensuring data integrity and system continuity.}
+    \end{itemize}
+    \vspace{2pt}
 
 \item[]
-	\ressubheading{Datalore Labs Private Limited}{Bengaluru, India}{Machine Learning Intern}{July 2019 -- August 2019}
-	\begin{itemize}
-		\resitem{Predicted the probability of Parkinson's Disease from audio feature samples using multiple ML models including KNN, Logistic Regression, Decision Tree, and Random Forest.}
-		\resitem{Improved prediction accuracy from \textbf{89.79\%} to \textbf{99.04\%} by tuning a Decision Tree classifier.}
-	\end{itemize}
+    \ressubheading{Datalore Labs Private Limited}{Bengaluru, India}{Machine Learning Intern}{July 2019 -- August 2019}
+    \begin{itemize}[itemsep=2pt, parsep=0pt]
+        \resitem{Predicted the probability of Parkinson's Disease from audio feature samples using multiple ML models including KNN, Logistic Regression, Decision Tree, and Random Forest.}
+        \resitem{Improved prediction accuracy from \textbf{89.79\%} to \textbf{99.04\%} by tuning a Decision Tree classifier.}
+    \end{itemize}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,7 +99,7 @@
 
 \resheading{Skills}
 
-\begin{description}
+\begin{description}[itemsep=2pt, parsep=0pt]
 \item[Languages:]
 Java, Python, C, C++, FORTRAN
 \item[Tools / Services:]
@@ -112,5 +111,14 @@ GitHub Copilot, Claude Code
 \end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            HONOR & ACHIEVEMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Honor \& Achievements}
+\begin{description}[itemsep=2pt, parsep=0pt]
+\item[2025] At Infosys Ltd. Bangalore, Received certificate for exceptional dedication, outstanding contributions and exemplary performance.
+\item[2022] At FIS Solutions (India) Pvt. Ltd. Bangalore, Received Kudos award for sole contribution towards IV Gen3 Server migration.
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

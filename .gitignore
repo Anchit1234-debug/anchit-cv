@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# LaTeX build artifacts
+anchit-resume.pdf
+anchit-resume.aux
+anchit-resume.log
+anchit-resume.out
+anchit-resume.synctex.gz
+anchit-resume.fdb_latexmk
+.gitignore
+.gitignore
+anchit-resume.fls
