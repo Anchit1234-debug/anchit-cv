@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['feature/anchit-cv']
+    branches: ['feature/github-pages']
   workflow_dispatch:
 
 permissions:
