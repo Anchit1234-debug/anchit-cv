@@ -81,6 +81,7 @@ function cleanTex(s) {
     prev = result
     result = result
       .replace(/\\&/g, '&')
+      .replace(/\\textasciitilde/g, '~')
       .replace(/\\textbf\{([^{}]*)\}/g, '$1')
       .replace(/\\textit\{([^{}]*)\}/g, '$1')
       .replace(/\\emph\{([^{}]*)\}/g, '$1')
