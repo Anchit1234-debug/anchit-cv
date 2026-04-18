@@ -84,6 +84,7 @@ export const cvData: CvData = {
           "role": "Senior Associate Consultant (Helix)",
           "dates": "August 2024 -- Present",
           "bullets": [
+            "Engineered 8 microservices across the domains of Infosys Helix, a multi-tenant US healthcare platform, enhancing scalability and modularity, to build a comprehensive solution that delivers Member Enrollment, Producer Portal & IVR Services for a large US healthcare client.",
             "Developed and maintained scalable RESTful APIs using Java and Spring Boot, enabling seamless integration with external systems and cross-domain microservices architectures.",
             "Engineered high-throughput SFTP-to-Azure data pipelines using Spring Scheduler, processing \\textasciitilde10K EDI 834 files daily with robust error handling and reliability.",
             "Orchestrated containerized deployments using Docker and Kubernetes, implementing Helm-based release management and leveraging ConfigMaps and Secrets for secure multi-environment deployments.",
