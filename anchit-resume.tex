@@ -16,7 +16,6 @@
 
 \definecolor{mygrey}{gray}{0.80}
 \raggedbottom
-\raggedright
 \setlength{\tabcolsep}{0in}
 
 % Margins
@@ -26,12 +25,14 @@
 \addtolength{\topmargin}{-0.65in}
 \addtolength{\textheight}{1.3in}
 
+\renewcommand{\labelitemii}{\textbullet}
+
 %-----------------------------------------------------------
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-1pt}}
-\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\resheading}[1]{\noindent{\large \colorbox{mygrey}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
 \newcommand{\ressubheading}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
         \textbf{#1} & #2 \\
         \textit{#3} & \textit{#4} \\
 \end{tabular*}\vspace{-6pt}}
@@ -40,11 +41,8 @@
 
 \begin{document}
 
-\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
-{\huge \textbf{Anchit Bhushan}\par} & \textit{\href{mailto:bhushananchit@gmail.com}{bhushananchit@gmail.com}} \\
-                                    & \faMobilePhone\ \textit{\href{tel:+918861885327}{+91 8861885327}} \\
-                                    & \faLinkedin\ \textit{\href{https://www.linkedin.com/in/anchit-bhushan-b06692130}{LinkedIn}} \\
-                                    & \faGithub\ \textit{\href{https://github.com/Anchit1234-debug}{GitHub}}
+\noindent\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+{\huge \textbf{Anchit Bhushan}} & \href{mailto:bhushananchit@gmail.com}{\faEnvelope} \enspace \href{tel:+918861885327}{\faMobilePhone} \enspace \href{https://www.linkedin.com/in/anchit-bhushan-b06692130}{\faLinkedin} \enspace \href{https://github.com/Anchit1234-debug}{\faGithub}
 \end{tabular*}
 
 \vspace{2pt}
@@ -57,20 +55,19 @@
 
 \begin{itemize}[leftmargin=0pt, itemsep=0pt, parsep=0pt]
 \item[]
-    \ressubheading{Infosys Limited}{Bengaluru, India}{Senior Associate Consultant (Helix)}{August 2024 -- Present}
+    \ressubheading{Infosys Limited}{Bengaluru, India}{Senior Associate Consultant (\href{https://www.infosys.com/products-and-platforms/infosys-helix/overview.html}{Helix})}{August 2024 -- Present}
     \begin{itemize}[itemsep=2pt, parsep=0pt]
-        \resitem{Engineered \textbf{8 microservices} across the domains of \textbf{Infosys Helix}, a multi-tenant US healthcare platform, enhancing scalability and modularity, to build a comprehensive solution that delivers \textbf{Member Enrollment}, \textbf{Producer Portal}, and \textbf{IVR Services} for a large US healthcare client.}
-        \resitem{Developed and maintained scalable \textbf{RESTful} APIs using \textbf{Java} and \textbf{Spring Boot}, enabling seamless integration with external systems and cross-domain microservices architectures.}
-        \resitem{Engineered high-throughput \textbf{SFTP}-to-\textbf{Azure} data pipelines using Spring Scheduler, processing \textbf{\textasciitilde10K} \textbf{EDI 834} files daily with robust error handling and reliability.}
+        \resitem{Developed \textbf{8 microservices} exposing around \textbf{60 endpoints} across the domains of \textbf{Infosys Helix}, a multi-tenant US healthcare platform, delivering \textbf{Member Portal}, \textbf{Producer Portal}, and \textbf{Group IVR} for a large US healthcare client.}
+        \resitem{Designed high-throughput bidirectional data pipelines between \textbf{SFTP} and \textbf{Azure} using \textbf{Spring Scheduler}, processing \textbf{\textasciitilde10K} \textbf{EDI 834} files daily with robust error handling and reliability.}
         \resitem{Orchestrated containerized deployments using \textbf{Docker} and \textbf{Kubernetes}, implementing \textbf{Helm}-based release management and leveraging ConfigMaps and Secrets for secure multi-environment deployments.}
         \resitem{Led \textbf{code reviews} for 3 engineers, enforcing style guidelines, testability, accuracy, and Clean Code principles to maintain software quality.}
         \resitem{Triaged and resolved production system issues by analyzing root causes across service, network, and infrastructure layers, tracking defects to closure and minimizing operational impact.}
     \end{itemize}
 
 \item[]
-    \ressubheading{FIS Solutions (India) Private Limited}{Bengaluru, India}{Software Engineer (Global Plus -- Wealth Management)}{July 2021 -- Jan 2024}
+    \ressubheading{FIS Solutions (India) Private Limited}{Bengaluru, India}{Software Engineer (\href{https://www.fisglobal.com/-/media/fisglobal/files/pdf/product-sheet/global-plus-product-sheet.pdf}{Global Plus} -- Wealth Management)}{July 2021 -- Jan 2024}
     \begin{itemize}[itemsep=1pt, parsep=0pt]
-        \resitem{Enhanced inbound and outbound \href{https://www.swift.com/}{SWIFT} message processing for Standards Update 2023, ensuring compliance and reliability for distributed financial operations across multiple global banking clients.}
+        \resitem{Enhanced inbound and outbound \href{https://www.swift.com/}{SWIFT} message processing for Standards Update 2023 using \textbf{Java} and \textbf{Spring}, ensuring compliance and reliability for distributed financial operations across multiple global banking clients.}
         \resitem{Debugged and resolved complex defects in \textbf{C} and \textbf{FORTRAN} within a \textbf{UNIX} environment for a large-scale Wealth Management platform, analyzing issues at the system and network layers to restore service quality.}
         \resitem{Designed and implemented a dual push mechanism to export files between \textbf{Windows Server}-hosted \textbf{.NET} applications via \textbf{XML}, improving cross-server data transfer reliability.}
     \end{itemize}
