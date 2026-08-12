@@ -21,10 +21,14 @@ The job description is provided as: $ARGUMENTS
 - Tell me the company, role, and the branch `apply/<slug>` you're about to use.
 
 ## 2. Set up the branch
-- Run `git fetch origin` and detect the default branch (main or master).
-- If `apply/<slug>` already exists locally or on origin, check it out and pull it — I'm updating an existing application.
-- Otherwise create `apply/<slug>` fresh from the latest default branch, so the CV starts from my current base.
-
+- Run `git fetch origin` so `main` is current.
+- Always base the work on `main` (the root branch):
+  - If `apply/<slug>` does NOT exist locally or on origin, create it from the latest main:
+    `git checkout main && git pull` then `git checkout -b apply/<slug>`.
+  - If `apply/<slug>` already exists, check it out and pull it — I'm updating an existing application.
+- Confirm you are now on `apply/<slug>`. **Never edit files, stage, or commit while on `main`.**
+  If you're still on `main` for any reason (checkout failed, dirty tree, etc.), STOP and tell me — do not proceed.
+  
 ## 3. Tailor the CV — lightly
 - Find my CV `.tex` file (usually one main `*.tex`; if there are several, use the one named in CLAUDE.md, or ask).
 - Make LIGHT, honest edits only:
